@@ -96,6 +96,7 @@ function ReportActionsView(props) {
 
     const isFocused = useIsFocused();
     const reportID = props.report.reportID;
+    const chatReportID = props.report.chatReportID;
     const hasNewestReportAction = lodashGet(props.reportActions[0], 'isNewestReportAction');
 
     /**
@@ -110,7 +111,7 @@ function ReportActionsView(props) {
             return;
         }
 
-        Report.openReport(reportID);
+        Report.openReport(chatReportID);
     };
 
     useEffect(() => {
